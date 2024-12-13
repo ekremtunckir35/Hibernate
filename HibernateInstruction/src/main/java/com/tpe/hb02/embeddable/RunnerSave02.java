@@ -25,6 +25,7 @@ public class RunnerSave02 {
         Configuration config = new Configuration().configure().addAnnotatedClass(Student02.class);
         SessionFactory sf = config.buildSessionFactory();
         Session session = sf.openSession();
+
         Transaction transaction = session.beginTransaction();
 
         session.save(student1);

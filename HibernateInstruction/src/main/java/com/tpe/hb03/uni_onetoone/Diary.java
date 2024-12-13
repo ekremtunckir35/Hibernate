@@ -16,11 +16,12 @@ public class Diary {
     private String name;
 
     @OneToOne  //diary ile Student03 arasinda birebir iliski kurulmaini saglar
-               //bunun icin diary ile FK ekler.default isim : studet_id
+               //bunun icin diary ile FK ekler.default isim : student_id
 
 
-    @JoinColumn(name="std_id") //OPSIYONEL
-    private  Student03 student;// ONE //gunluk hangi ogrenciye ait onu gosterir.
+
+    @JoinColumn(name="std_id",unique = true) //OPSIYONEL(isim degistirme,constraint ekleme vb..)
+    private  Student03 student;// ONE //gunluk hangi ogrenciye ait onu gosterir.1 tane ogrenciye ait.
 
 
 

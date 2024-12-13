@@ -28,8 +28,8 @@ public class RunnerSave03 {
         //-------------------------------------
 
         diary1.setStudent(student1);//diary1 ile student1 iliskilendirdik.
-        diary2.setStudent(student2);
-        diary3.setStudent(student3);
+        diary2.setStudent(student2);       //
+        diary3.setStudent(student3);       //
        //yani FK sutununa studentlarin id lerini ekledik.DIKKAT :unique(tekrarsiz)
 
 

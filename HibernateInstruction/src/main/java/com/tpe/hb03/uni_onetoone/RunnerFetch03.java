@@ -36,12 +36,14 @@ public class RunnerFetch03 {
         //id:1002 olan öğrencinin günlüğü hangisidir
 
         Student03 student2=session.get(Student03.class,1002);
+
         //student2.getDiary() -->java kodları ile ulaşamıyoruz fakat DB den ulaşabilirim
         String diaryname= (String) session.createSQLQuery
                 ("SELECT name FROM diary WHERE std_id=1002").uniqueResult();
 
         System.out.println(diaryname);
 
+        //PROBLEM :sorgu yazmadan diary den student a,studentten diary ulasmak istersem
 
 
         session.close();

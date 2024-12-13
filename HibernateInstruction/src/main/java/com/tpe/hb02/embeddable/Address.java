@@ -2,7 +2,23 @@ package com.tpe.hb02.embeddable;
 
 
 import javax.persistence.Embeddable;
+/*
+@Embeddable Anotasyonu
+@Embeddable, gömülü bir bileşen sınıfını tanımlamak için kullanılır.
+Bu sınıf bir entity değildir; yalnızca bir entity'nin bir parçası olarak kullanılır.
+@Embeddable sınıfı bağımsız bir tablo oluşturmaz.
+Veritabanında, bu sınıfın alanları ana entity'nin
+alanlarıyla aynı tabloya eklenir.
 
+@Embedded Anotasyonu
+@Embedded, bir entity içinde @Embeddable sınıfın kullanılacağını belirtir.
+Entity, @Embedded sınıfın özelliklerini kendi özellikleri gibi kabul eder
+ ve veritabanı tablosunda bunları ayrı sütunlar olarak saklar.
+
+Kullanım Senaryoları:
+Bir entity'deki adres, iletişim bilgileri vb.
+gibi bir grup alanı(field) düzenli bir şekilde modellemek için uygundur.
+ */
 @Embeddable  //gomulebilir
 public class Address {
 
@@ -19,6 +35,10 @@ public class Address {
         this.city = city;
         this.country = country;
         this.zipcode = zipcode;
+    }
+
+    public Address() {
+
     }
 
 
