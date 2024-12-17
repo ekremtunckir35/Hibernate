@@ -17,8 +17,19 @@ public class Student07 {//one
     private String name;
 
     private int grade;
+    //CascadeType.REMOVE
+    // parent tablodan(student) satır silmek istediğimizde önce ilişkili olduğu
+    //satırları(bookList) diğer tablodan(book) siler, ardından parenttan silme işlemi yapar.
+    //yani aşamalı(kademeli) silme işlemini otomatik yapar.
+     /*
+    orphanRemoval:sadece OneToMany anotasyonunda vardır.
+    studentin kitap listesinden bir kitabı silersek veya null yaparsak
+    Book tablosundan bu kitabı siler.
+     */
 
-    @OneToMany(mappedBy = "student")//ilişki kurar:JOIN table oluşturur
+    //ilişki kurar:JOIN table oluşturur
+    @OneToMany(mappedBy = "student",/*cascade = CascadeType.REMOVE*/orphanRemoval = true)
+
     private List<Book07> bookList=new ArrayList<>();//bu öğrencinin kitapları nelerdir
 
     //const
