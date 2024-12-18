@@ -1,5 +1,6 @@
 package com.tpe.hb09.fetchtypes;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -11,7 +12,10 @@ public class Book09 {
     private Integer id;
     private String name;
 
-    @ManyToOne//default fetchtype:eager
+    //cascade = CascadeType.ALL:bir kitabı DB ye kaydettiğimde bu kitabın
+    // sahibi olan öğrenciyi de otomatik olarak kaydeder
+
+    @ManyToOne(cascade = CascadeType.ALL)//default fetchtype:eager
     private Student09 student;
 
     public Book09() {
