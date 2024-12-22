@@ -19,11 +19,12 @@ public class RunnerFetch05 {
         Transaction tx = session.beginTransaction();
 
         // !!! get methodu
-//        Student05 student = session.get(Student05.class,1001);
-//        System.out.println(student);
+//       Student05 student = session.get(Student05.class,1001);
+//       System.out.println(student);
 //        System.out.println(student.getUniversity());
 
         // !!! HQL ile 1 id li üniversiteye giden bütün öğrencileri bulalım
+
         String hqlQuery = "FROM Student05 s WHERE s.university.id=1 ";
         List<Student05> resultList1 =
                 session.createQuery(hqlQuery , Student05.class).getResultList();
