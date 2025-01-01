@@ -82,6 +82,8 @@ public class RunnerFetch07 {
 //            System.out.println(student07);
 //        }
 
+
+
         tx.commit();
         session.close();
         sf.close();
